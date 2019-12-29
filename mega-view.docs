@@ -1,0 +1,181 @@
+
+                 Short docs for mEGA-vIEW V3.3 FIM Version
+
+               Full documentation will follow in a few days
+
+-------------------------------------------------------------------------------
+
+Introduction:
+~~~~~~~~~~~~~
+
+This new Version was written because of the fact that the amiex version has
+some restrictions which are caused during the amiex system. Also some other
+strange bugs where found in the past, which are really not fixable by me 
+without modifying the whole code. This was the main reason to rewrite the
+program to be FAME native only. This is now the result, it is absolutly FAME
+only and has many new or enhanced features the Amiex Version won't have. As 
+soon as the FAME Version is ready for public release, I will also release my
+Amiex Version for free, because the development of the Amiex version won't 
+continue anymore...
+
+
+Requirements:
+~~~~~~~~~~~~~
+
+mEGA-vIEW is a complete new program without any old code. To use it, you must
+have the following:
+
+ - FAME BBS V1.2x running
+
+ - Amiga OS V3.x (lower won't work anymore, as it uses now memory pools!)
+
+ - PIPE: Device mounted (standard when installing Workbench)
+
+ - FileID.library V8+ installed (lower versions won't work!)
+
+ - One or all of the directly supported external programs, which are currently:
+
+    UnArj V2.41                                     DMS V2.04
+    CheckExe V1.0ß                                  LHA V1.50
+    LZX V1.21 (lower Versions WON'T WORK!)          UnZIP V5.31
+    Guide2DocProf V0.3 (included in archive)        Shrink V1.1
+    WarpCk V1.4                                     ZoomChk V0.1
+    Zoo V2.1                                        DMSDescript V1.1
+    EXEDescript V1.0                                HTMLess V3.0 (included)
+    UnRAR V2.0                                      UnTar V1.5 (included)
+
+Please note that the Versionnumbers are the ones which I have tested.
+It is possible that newer (or maybe lower) Versions are working, too. If you
+have different Versions which works fine with mEGA-vIEW, please write me a
+short mail so I can update the docs...
+
+
+Features:
+~~~~~~~~~
+
+- mEGA-vIEW is able to work directly with the following filetypes:
+
+  ARJ,DMS,EXE,LHA,LZX,ZIP,WARP,SHRINK,ZOO,ZOOM,RAR,TGZ,HTML,GUIDE
+
+  For LHA,LZX and ZIP there exists a special archive mode allowing the user
+  to view the archive contents in a cursor controlled menu, selecting files
+  to view or download directly from the archive.
+
+  Unknown Filetypes could be viewed in HEX Mode. 
+
+  Also Icons are supported. Please see ToDo Section for missing filetypes
+  and other features currently not implemented.
+
+- Uses now an own directory to store temporary files. This directory will
+  be removed as soon as mEGA-vIEW will be exited. No more forgotten files
+  in your RAM: disks ;)
+
+- The Textdisplay function has now up/down scrolling support and also Zippy
+  searching inside the text is possible.
+
+- Uses FAME-specific functions to gain more flexibility (like Global Viewing)
+
+- Easy-to-use configurationfile (plain ASCII Text) in standard AmigaDOS 
+  template syntax. No tooltypes anymore...
+
+- External Filetypes could be added by the sysop to enhance the list of 
+  supported files. Nearly all CLI Commands could be added! (V3.3)
+
+- Is "pure", means could be loaded resident
+
+- Shows Versioninformation for Libs, Devices, datatypes etc. (V3.1ß)
+
+
+Installation:
+~~~~~~~~~~~~~
+
+Just as simple as every FAME Door: 
+
+1) Copy mEGA-vIEW to a directory of your choice. Copy the mEGA-vIEW.cfg
+   file to your FAME:ExternEnv/Doors/ drawer. Copy the supplied archiver
+   to a directory where you've stored your archivers (normally C:).
+
+2) Start System-Editor, go to section Doors and add a new door with the 
+   following settings:
+
+    DoorCallName: V
+       Door Path: <THE PATH WHERE THE mEGA-vIEW.FIM FILE IS LOCATED>
+           Stack: Leave the default
+       Door Type: FIM / Multinode
+   Command Allow: NR AR CF RD SR
+
+   Save these settings...that's it for FAME installation.
+
+3) Start now your Editor and load in the mEGA-vIEW.cfg file and adjust all
+   Pathes and other values to your needs (The Preferences file contains also
+   all descriptions for all configuration values).
+
+4) If you wish copy the supplied mEGA-vIEW_ext.cfg to FAME:externenv/doors/
+   and enhance/change it to met your requirements. However this file is not
+   required for mEGA-vIEW to work.
+
+5) Go into the BBS and type 'V' and the command prompt, you may then view 
+   files ;)))
+
+
+USAGE:
+~~~~~~
+
+Well the usage is exactly (!) the same like the Amiex Viewer, so here's only
+a very short description what is supported via the Command line:
+
+1) Without arguments mEGA-vIEW starts and prompts you for the filename to view.
+   You may now give the filename or a pattern and mEGA-vIEW will show the file
+   if it exists. You may also add the keyword 'NS' after the pathname/filename
+   to indicate that you wish to view the selected file NonStop (no pausing).
+   Useful to view ANSI Animations....
+
+2) Start mEGA-vIEW with all parameters you require, i.e.:
+   'v trsi*.txt NS'
+
+   Will look in your current dirs for all files matching TRSI*.TXT and prompts
+   you for every file.
+
+3) Start mEGA-vIEW with parameter '$' to view Version and Compile Informations.
+
+
+I don't think that further informations are required, because mEGA-vIEW is 
+programmed to give itself all infos to the user including very clear error
+messages, so you shouldn't have any problems with it...
+
+
+TODO:
+~~~~~
+
+Some parts are currently not implemented because I want to test out first
+the core of mEGA-vIEW before enhancing it with additional features. So please
+all you Beta-Testers out there, TEST THIS THING AND REPORT BUGS TO ME! You
+will find my e-mail adress when starting mEGA-vIEW with the '$' option. 
+
+The following additional features are currently planned:
+
+ - Global Viewing...well the code is already finished, but FAME has currently
+   no support for this flag integrated (Door Commands), these functions for FAME
+   are under development and will be soon ready for usage.
+
+ - Maybe User configuration...but I have really no clue what the user should
+   configure ;) If you have any ideas report them to me please...
+
+ - An external configuration program for mEGA-vIEW is already under 
+   development allowing the sysop to easily configure the door. This program
+   will be MUI driven...
+
+ - Support for V1.04 of the Amiga ARJ Porting, which allows to extract single
+   files like LHA,LZX or ZIP..you will get a cursor controlled ARJ Window in 
+   the next update when I have tested out V1.04 of the ARJ porting...
+
+ - Support for UnACE...but I have currently no .ace archives here, if you have
+   some, please send them to me (but not more than 200kb !!!)
+
+ - Maybe PowerPacker support (like my MUI mEGA-vIEW has)
+
+If you have any additional ideas or other suggestions for this or any other
+of my programs feel free to contact me in my BBS or via e-mail to 
+siegel@trsi.de. Have fun...
+
+-----------------------------------------------------------------------[EOF]---

@@ -1,0 +1,58 @@
+*******************************************************************************
+*             Program history for mEGA-vIEW V3 by SieGeL/tRSi                 *
+*                                                                             *
+*        Legend: + => Added   /   - => Bugfix   /   * => Suggestion           *
+*******************************************************************************
+
+V3.0ß  (04-30-98)   +Finally V3.0 is now almost done. It includes all features
+                     the Amiex version has including support for new Filetypes.
+                     Requires FAME V1.x and OS 3.x . Currently not implemented
+                     are the External FileSupport and the Global Viewing, this
+                     will be added when the main core of mEGA-vIEW is bugfree.
+
+V3.1ß  (05-05-98)   +Fixed some small cosmetical bugs and added Progress bar
+                     indicator when parsing ZIP files.
+
+                    +Added Versionsnumber Check for Executables, Libraries,
+                     Devices and Datatypes.
+
+                    -Fixed a bug which may crash the whole machine...but this
+                     is only possible when someone configure MV wrong...
+
+V3.2ß  (07-22-98)   +Added FileID.library V8 support. This is now also the
+                     minimum requirement for mEGA-vIEW. It directly supports
+                     now HTML,RAR & TGZ files without Extension checks.
+
+V3.3   (08-26-98)   +Changed the behavour of mEGA-vIEW when dealing with
+                     unknown files. All files not directly supported by MV but
+                     known by FileID.library will be shown in Hex Mode, all
+                     totally unknown Files will be shown as plain text as long
+                     as the extensioncheck won't find any known extension.
+                     All extensions have to be defined in a seperate file in
+                     directory FAME:ExternEnv/Doors/mEGA-vIEW_EXT.cfg.
+
+                    -Fixed a bug when using NonStop View in Hexmode. The next
+                     file will be viewed in NS mode too, because I've forgot
+                     to clear that flag.
+
+                    +Enhanced security by adding an additional check if the
+                     selected filename is equal to the user.data filename, in
+                     this case mEGA-vIEW aborts!
+
+V3.4   (10-11-98)   +Added MP3 Information! Whenever FileID.library identifies
+                     a MP3 Module, MV tries to read out all datas including
+                     the MP3 Tag. This is a built-in feature and won't require
+                     any external program or library.
+
+       (10-24-98)   +Added Playlength to MP3 Information display. Also added
+                     a 2nd check for MP3's via the Extension, as Bloody's
+                     FileID.library won't be able to detect ALL MP3 mods. This
+                     is *NOT* his fault, but the lack of a unique File id...
+
+                    *SUGGESTION FROM DAVID 'STRIDER' WETTIG:
+                     New Preferences Option 'USE_ASL_REQUESTER=<YES|NO>' added.
+                     When set to YES mEGA-vIEW will use an ASL Requester to
+                     choose the file to use. This works only for LOCAL connects.
+                     It can be also disabled by using the Parameter NOASL when
+                     starting mEGA-vIEW the first time.
+------------------------------------------------------------------------[EOF]--
