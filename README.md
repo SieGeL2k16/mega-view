@@ -4,7 +4,7 @@ These are the sources of my FAME Textviewer called "meGA-vIEW".
 
 Original description:
 
-``
+```
 This is the native FAME Version of my well-known Textviewer.
 Many improvements are made (better textdisplay including full
 CRSR key control, much faster, better archive support) and new
@@ -15,7 +15,7 @@ EXE,ZIP,LHA,LZX,DMS,ARJ,ZOO,ZOOM,WARP,SHRINK,AGUIDE,ICONS,RAR,TGZ,HTML,MP3
 
 Additional unknown filetypes could be also added. The archive comes together
 with an installer script and a AmigaGuide manual.
-``
+```
 
 
 I've successfully compiled these sources with SAS/C 6.58 on my WinUAE system, to compile just enter:
